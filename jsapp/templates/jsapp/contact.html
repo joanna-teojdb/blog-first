@@ -1,0 +1,29 @@
+{% extends 'jsapp/base.html' %}
+{% block title %} Kontakt {% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">{{ pagename }}</h2>
+    <p class="text-center">Jeśli moja oferta jest dla Państwa ciekawa, można się ze mną skontaktować przez formularz:</p>
+    
+    <form action="sent_contact" method="get">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="imie">Imię:</label>
+            <input type="text" class="form-control" id="imie" name="imie" required>
+        </div>
+        <div class="form-group">
+            <label for="nazwisko">Nazwisko:</label>
+            <input type="text" class="form-control" id="nazwisko" name="nazwisko" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="wiadomosc">Wiadomość:</label>
+            <textarea class="form-control" id="wiadomosc" name="wiadomosc" rows="4" required></textarea>
+        </div>
+        <button class="btn btn-primary" href="sent_contact">Wyślij</button>
+    </form>
+</div>
+{% endblock %}

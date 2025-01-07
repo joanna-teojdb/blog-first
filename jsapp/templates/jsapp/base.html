@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} Wirtualne atelier J. S. {% endblock %}</title>
+    <!-- Link do Bootstrapa CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1> Wirtualne atelier Joanny S. </h1>
+        <nav>
+            <a class="text-white" href="{% url 'index' %}">Strona główna</a>
+            <a class="text-white" href="{% url 'about' %}">O nas</a>
+            <a class="text-white" href="{% url 'gallery' %}">Galeria</a>
+            <a class="text-white" href="{% url 'contact' %}">Kontakt</a>
+            <a class="text-white" href="{% url 'post_list' %}">Posty</a>
+            <a class="text-white" href="{% url 'post_create' %}">Dodaj post</a>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        {% block content %}Bla bla \n bla bla {% endblock %}
+    </main>
+    <footer class="text-center mt-4">
+        <h1 class="text-center">Footer. You are in: {{ pagename }}</h1> 
+        <p class="text-center">Stopka atelier</p>
+        Copyright &copy; 2024
+    </footer>
+
+    <!-- Link do Bootstrapa JS i jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
